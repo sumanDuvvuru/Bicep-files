@@ -1,0 +1,34 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "location": {
+      "value": "eastus"
+    },
+    "PAppserviceName": {
+      "value": "azbicep-dev-eus-asp1"
+    },
+    "PAppservice": {
+      "value": "azbicep-dev-eus-wapp1"
+    },
+    "PAppinsights": {
+      "value": "azbicep-dev-eus-wapp1-ai"
+    },
+    "PSQLServer": {
+      "value": "azbicep-dev-eus-sqlserver1"
+    },
+    "padministratorLogin": {
+      "value": "Sqladmin"
+    },
+  
+     "padministratorpassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/c44b8408-a012-4635-a2a9-d0068c8afb42/resourceGroups/bicep/providers/microsoft.keyVault/vaults/key-valuts-secrets"
+    
+        },
+        "secretName": "Adminpassword"
+      }
+     }
+  }
+}
